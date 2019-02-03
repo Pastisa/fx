@@ -1,0 +1,62 @@
+
+Skip to content
+ 
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ @Pastisa Sign out
+97
+6,595 209 antonmedv/fx
+ Code  Issues 9  Pull requests 0  Insights
+fx/snap/snapcraft.yaml
+9a4d897  on 19 Dec 2018
+@antonmedv antonmedv Update snapcraft.yaml
+@antonmedv @popey
+    
+32 lines (27 sloc)  545 Bytes
+name: fx
+base: core18 # the base snap is the execution environment for this snap
+version: git
+summary: Command-line tool and terminal JSON viewer
+description: |
+  Command-line JSON processing tool
+  Features
+    * Formatting and highlighting
+    * Interactive mode
+    * Themes support
+architectures:
+  - build-on: i386
+  - build-on: amd64
+  - build-on: armhf
+  - build-on: arm64
+
+grade: stable
+confinement: strict
+
+parts:
+  fx:
+    plugin: nodejs
+    node-engine: "8.14.1"
+    source: .
+
+apps:
+  fx:
+    command: fx
+    plugs:
+      - network
+© 2019 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Press h to open a hovercard with more details.
